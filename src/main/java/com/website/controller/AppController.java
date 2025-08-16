@@ -1,6 +1,5 @@
 package com.website.controller;
 
-import com.website.domain.AppInfo;
 import com.website.domain.LiveInfo;
 import com.website.domain.NotsApp;
 import com.website.service.AppService;
@@ -27,26 +26,6 @@ public class AppController {
 
     LocalDateTime now = LocalDateTime.now();
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-
-    /**
-     * 获取最新版本的信息
-     */
-    @GetMapping("/latest")
-    public Result<AppInfo> getLatestInfo() {
-        return Result.success(appService.getLatestApk());
-    }
-
-
-    /**
-     * 获取全部的版本信息
-     *
-     * @return
-     */
-    @GetMapping("/all")
-    public Result<List<AppInfo>> getAllInfo() {
-        return Result.success(appService.getAllApk());
-    }
-
 
     /**
      * 测试内容
