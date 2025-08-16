@@ -6,6 +6,9 @@ import com.website.domain.NotsApp;
 
 import java.util.List;
 
+/**
+ *  app内容
+ */
 public interface AppService {
     // 获取当前正在使用的最新版app
     AppInfo getLatestApk();

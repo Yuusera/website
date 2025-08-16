@@ -10,7 +10,7 @@ import java.io.Serializable;
 @TableName("live_info")
 public class LiveInfo implements Serializable {
     // 直播间id
-    private Integer id;
+    private long id;
     // 直播间名称
     private String name;
     // 直播间封面

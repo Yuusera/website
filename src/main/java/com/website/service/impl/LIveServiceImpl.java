@@ -22,4 +22,19 @@ public class LIveServiceImpl implements LIveService {
                         .orderByAsc("hot")
         );
     }
+
+    @Override
+    public boolean addLive(LiveInfo liveInfo) {
+        return liveMapper.insert(liveInfo) > 0 ? true : false;
+    }
+
+    @Override
+    public boolean delLive(long id) {
+        return liveMapper.deleteById(id) > 0 ? true : false;
+    }
+
+    @Override
+    public boolean updateLive(LiveInfo liveInfo) {
+        return liveMapper.updateById(liveInfo) > 0 ? true : false;
+    }
 }

@@ -3,6 +3,7 @@ package com.website.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.fasterxml.jackson.databind.deser.std.UUIDDeserializer;
 import com.website.domain.AppInfo;
 import com.website.domain.NotsApp;
 import com.website.mapper.AppMapper;
@@ -13,6 +14,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.UUID;
 
 @Service
 public class AppServiceImpl implements AppService {
