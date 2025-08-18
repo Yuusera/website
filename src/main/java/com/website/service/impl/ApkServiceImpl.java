@@ -31,7 +31,7 @@ public class ApkServiceImpl implements ApkService {
 
     @SneakyThrows
     @Override
-    public void uploadApk(MultipartFile file) {
+    public ApkInfo uploadApk(MultipartFile file) {
         String filename = file.getOriginalFilename();
         String lowerCase = filename.toLowerCase();
         byte[] bytes = file.getBytes();
@@ -64,6 +64,7 @@ public class ApkServiceImpl implements ApkService {
         if (!apkMapper.insertApk(apkInfo)) {
             throw new RemoteException("文件上传失败");
         }
+        return apkInfo;
     }
 
 

@@ -10,7 +10,7 @@ import org.springframework.web.multipart.MultipartFile;
  */
 public interface ApkService {
     // 上传apk
-    void uploadApk(MultipartFile file);
+    ApkInfo uploadApk(MultipartFile file);
 
     // 下载apk
     ApkInfo downloadApk();

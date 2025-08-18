@@ -8,6 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 /**
  *
  * @date 2025/8/16
@@ -21,11 +24,14 @@ public class ApkController {
     @Autowired
     private ApkService apkService;
 
+    LocalDateTime now = LocalDateTime.now();
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+
     @PostMapping("/upload")
-    public Result<String> uploadApk(@RequestParam("file") MultipartFile file) {
+    public Result<ApkInfo> uploadApk(@RequestParam("file") MultipartFile file) {
+        log.info("上传文件:{}", now.format(formatter));
         try {
-            apkService.uploadApk(file);
-            return Result.success("上传成功");
+            return Result.success(apkService.uploadApk(file));
         } catch (Exception e) {
             return Result.error(e.getMessage());
         }
@@ -34,6 +40,7 @@ public class ApkController {
 
     @GetMapping("/download")
     public Result<ApkInfo> downloadApk() {
+        log.info("下载文件:{}", now.format(formatter));
         return Result.success(apkService.downloadApk());
     }
 }
