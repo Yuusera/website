@@ -15,7 +15,7 @@ public interface LIveService {
     boolean addLive(LiveInfo liveInfo);
 
     // 删除主播列表
-    boolean delLive(long id);
+    boolean delLive(int id);
     // 修改主播列表
     boolean updateLive(LiveInfo liveInfo);
 

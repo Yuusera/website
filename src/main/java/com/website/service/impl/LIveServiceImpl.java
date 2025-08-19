@@ -19,7 +19,7 @@ public class LIveServiceImpl implements LIveService {
     public List<LiveInfo> getLiveList() {
         return liveMapper.selectList(
                 new QueryWrapper<LiveInfo>()
-                        .orderByAsc("hot")
+                        .orderByAsc("sort")
         );
     }
 
@@ -29,7 +29,7 @@ public class LIveServiceImpl implements LIveService {
     }
 
     @Override
-    public boolean delLive(long id) {
+    public boolean delLive(int id) {
         return liveMapper.deleteById(id) > 0 ? true : false;
     }
 

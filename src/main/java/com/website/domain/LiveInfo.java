@@ -11,8 +11,11 @@ import java.io.Serializable;
 @Data
 @TableName("live_info")
 public class LiveInfo implements Serializable {
+    // id
+    @TableId(type = IdType.NONE)
+    private int id;
     // 直播间id
-    private long id;
+    private long liveId;
     // 直播间名称
     private String name;
     // 直播间封面
@@ -21,5 +24,7 @@ public class LiveInfo implements Serializable {
     private Integer hot;
     // 直播间标签
     private String tags;
+    // 排序
+    private Integer sort;
 
 }
