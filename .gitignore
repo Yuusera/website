@@ -1,11 +1,7 @@
 HELP.md
 target/
 .mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
-src/main/java/com/website/config/CommonConfig.java
-src/main/java/com/website/controller/ChatController.java
-src/main/java/com/website/service/ConsultantService.java
+
 
 ### STS ###
 .apt_generated
@@ -35,3 +31,7 @@ build/
 ### VS Code ###
 .vscode/
 /src/test/
+/src/main/java/com/website/repository/
+/src/main/java/com/website/config/CommonConfig.java
+/src/main/java/com/website/controller/ChatController.java
+/src/main/java/com/website/service/ConsultantService.java
